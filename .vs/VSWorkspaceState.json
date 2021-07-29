@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\keyword_trends",
+    "\\parseapp",
+    "\\parseapp\\migrations",
+    "\\parseapp\\migrations\\__pycache__",
+    "\\parseapp\\__pycache__",
+    "\\static",
+    "\\static\\assets",
+    "\\templates"
+  ],
+  "SelectedNode": "\\parseapp\\__pycache__\\urls.cpython-39.pyc",
+  "PreviewInSolutionExplorer": false
+}

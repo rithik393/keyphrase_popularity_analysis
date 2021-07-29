@@ -1,0 +1,352 @@
+<!--
+=========================================================
+* Argon Design System - v1.2.2
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/argon-design-system
+* Copyright 2020 Harika (https://www.creative-tim.com)
+
+Coded by www.creative-tim.com
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>
+    Keyword Trends App
+  </title>
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <!-- Nucleo Icons -->
+  <link href="{% static 'assets/css/nucleo-icons.css' %}" rel="stylesheet" />
+  <link href="{% static 'assets/css/nucleo-svg.css' %}" rel="stylesheet" />
+  <!-- Font Awesome Icons -->
+  <link href="{% static 'assets/css/font-awesome.css' %}" rel="stylesheet" />
+  <link href="{% static 'assets/css/nucleo-svg.css' %}" rel="stylesheet" />
+  <!-- CSS Files -->
+  <link href="{% static 'assets/css/argon-design-system.css' %}" rel="stylesheet" />
+  <style>
+    ul.cloud {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  line-height: 2.75rem;
+}
+
+ul.cloud a {
+  /*   
+  Not supported by any browser at the moment :(
+  --size: attr(data-weight number); 
+  */
+  --size: 4;
+  --color: #a33;
+  color: var(--color);
+  font-size: calc(var(--size) * 0.25rem + 0.5rem);
+  display: block;
+  padding: 0.125rem 0.25rem;
+  position: relative;
+  text-decoration: none;
+  /* 
+  For different tones of a single color
+  opacity: calc((15 - (9 - var(--size))) / 15); 
+  */
+}
+
+ul.cloud a[data-weight="1"] { --size: 1; }
+ul.cloud a[data-weight="2"] { --size: 2; }
+ul.cloud a[data-weight="3"] { --size: 3; }
+ul.cloud a[data-weight="4"] { --size: 4; }
+ul.cloud a[data-weight="5"] { --size: 6; }
+ul.cloud a[data-weight="6"] { --size: 7; }
+ul.cloud a[data-weight="7"] { --size: 7.5; }
+ul.cloud a[data-weight="8"] { --size: 8; }
+ul.cloud a[data-weight="9"] { --size: 8.5; }
+ul.cloud a[data-weight="10"] { --size: 9; }
+ul.cloud a[data-weight="11"] { --size: 9.5; }
+ul.cloud a[data-weight="12"] { --size: 10; }
+ul.cloud a[data-weight="13"] { --size: 10.5; }
+ul.cloud a[data-weight="14"] { --size: 11; }
+ul.cloud a[data-weight="15"] { --size: 11.5; }
+ul.cloud a[data-weight="16"] { --size: 12; }
+ul.cloud a[data-weight="17"] { --size: 12.5; }
+ul.cloud a[data-weight="18"] { --size: 13; }
+ul.cloud a[data-weight="19"] { --size: 13.5; }
+ul.cloud a[data-weight="20"] { --size: 14; }
+ul.cloud a[data-weight="21"] { --size: 14.5; }
+ul.cloud a[data-weight="22"] { --size: 15; }
+ul.cloud a[data-weight="23"] { --size: 16; }
+
+ul[data-show-value] a::after {
+  content: " (" attr(data-weight) ")";
+  font-size: 1rem;
+}
+
+ul.cloud li:nth-child(2n+1) a { --color: #181; }
+ul.cloud li:nth-child(3n+1) a { --color: #33a; }
+ul.cloud li:nth-child(4n+1) a { --color: #c38; }
+ul.cloud li:nth-child(2n+0.5) a { --color: rgb(233, 34, 223); }
+ul.cloud li:nth-child(3n+0.5) a { --color: rgb(243, 240, 39); }
+ul.cloud li:nth-child(4n+0.5) a { --color: rgb(25, 236, 226); }
+
+ul.cloud a:focus {
+  outline: 1px dashed;
+}
+
+ul.cloud a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 0;
+  height: 100%;
+  background: var(--color);
+  transform: translate(-50%, 0);
+  opacity: 0.15;
+  transition: width 0.25s;
+}
+
+ul.cloud a:focus::before,
+ul.cloud a:hover::before {
+  width: 100%;
+}
+
+@media (prefers-reduced-motion) {
+  ul.cloud * {
+    transition: none !important;
+  }
+}
+  </style>
+</head>
+
+<body class="index-page">
+  <!-- Navbar -->
+  <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg bg-white navbar-light position-sticky top-0 shadow py-2">
+    <div class="container">
+      <a class="navbar-brand mr-lg-5" href="{% static 'index.html">
+        <h3 class="logo display-4">Keyphrase trends</h3>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="navbar_global">
+        <div class="navbar-collapse-header">
+          <div class="row">
+            <div class="col-6 collapse-brand">
+              <a href="index.html">
+                <img src="{% static 'assets/img/brand/blue.png' %}">
+              </a>
+            </div>
+            <div class="col-6 collapse-close">
+              <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+  </nav>
+  <!-- End Navbar -->
+  <div class="wrapper">
+    <div class="section section-hero section-shaped">
+      <div class="shape shape-style-1 shape-primary">
+        <span class="span-150"></span>
+        <span class="span-50"></span>
+        <span class="span-50"></span>
+        <span class="span-75"></span>
+        <span class="span-100"></span>
+        <span class="span-75"></span>
+        <span class="span-50"></span>
+        <span class="span-100"></span>
+        <span class="span-50"></span>
+        <span class="span-100"></span>
+      </div>
+      <div class="page-header">
+        <div class="container shape-container d-flex align-items-center py-lg">
+          <div class="col px-0">
+            <div class="row align-items-center justify-content-center">
+              <div class="col-lg-7 col-md-6 text-center">
+                <h1 class="text-white display-1">Keyphrase Research Tool</h1>
+                <div class="btn-wrapper mt-5">
+                  <form method="POST">
+                    {% csrf_token %}
+                    <input class="form-control rounded-pill" placeholder="Search" id="search" name="search" type="text">
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="separator separator-bottom separator-skew zindex-100">
+        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+        </svg>
+      </div>
+    </div>
+    <div class="container">
+      <div class="card card-profile shadow mt--100">
+        <div class="px-4">
+          <h2 class="m-2 display-5">Trending Keyphrases</h2>
+          <div class="mt-3 py-5 border-top text-center">
+            <div class="row justify-content-center">
+              <div class="col-lg-9" >
+                
+                <p class="keywords" id ="keywords"></p>
+                
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <div class="card card-profile shadow mt-5">
+      <div class="px-4">
+        <h2 class="m-2 display-5">Keyphrase Analysis</h2>
+        <div class="mt-3 py-5 border-top text-center">
+          <div class="row justify-content-center">
+            <div class="col-md-12">
+              <ul class="cloud" role="navigation" aria-label="Webdev word cloud">
+                
+                <li ><a href="#" data-weight="4">HTTP</a></li>
+                <li><a href="#" data-weight="1">Ember</a></li>
+                <li><a href="#" data-weight="5">Sass</a></li>
+                <li><a href="#" data-weight="8">HTML</a></li>
+                <li><a href="#" data-weight="16">FlexBox</a></li>
+                <li><a href="#" data-weight="4">API</a></li>
+                <li><a href="#" data-weight="5">VueJS</a></li>
+                <li><a href="#" data-weight="15">Grid</a></li>
+                <li><a href="#" data-weight="2">Rest</a></li>
+                <li><a href="#" data-weight="19">JavaScript</a></li>
+                <li><a href="#" data-weight="3">Animation</a></li>
+                <li><a href="#" data-weight="7">React</a></li>
+                <li><a href="#" data-weight="8">CSS</a></li>
+                <li><a href="#" data-weight="11">Cache</a></li>
+                <li><a href="#" data-weight="3">Less</a></li>
+                <li><a href="#" data-weight="4">JavaScript</a></li>
+                <li><a href="#" data-weight="17">Animation</a></li>
+                <li><a href="#" data-weight="2">React</a></li>
+                <li><a href="#" data-weight="8">CSS</a></li>
+                <li><a href="#" data-weight="23">Cache</a></li>
+                <li><a href="#" data-weight="4">Less</a></li>
+              </ul>
+          </div>
+            <div class="col-lg-6 mt-5">
+              {% if graph1 %}
+                {{ graph1|safe }}
+              {% endif %}
+            </div>
+            
+            <div class="col-lg-6 mt-5">
+              {% if graph2 %}
+                {{ graph2|safe }}
+              {% endif %}
+              
+            </div>
+            <div class="col-lg-6 mt-5">
+              {% if graph3 %}
+                {{ graph3|safe }}
+              {% endif %}
+            </div>
+            <div class="col-lg-6 mt-5">
+              {% if graph4 %}
+                {{ graph4|safe }}
+              {% endif %}
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+    
+  </div>
+  </div><!-- Typography -->
+ 
+  
+  </div>
+  <!--   Core JS Files   -->
+  <script src="{% static 'assets/js/core/jquery.min.js' %}" type="text/javascript"></script>
+  <script src="{% static 'assets/js/core/popper.min.js' %}" type="text/javascript"></script>
+  <script src="{% static 'assets/js/core/bootstrap.min.js' %}" type="text/javascript"></script>
+  <script src="{% static 'assets/js/plugins/perfect-scrollbar.jquery.min.js' %}"></script>
+  <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
+  <script src="{% static 'assets/js/plugins/bootstrap-switch.js' %}"></script>
+  <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+  <script src="{% static 'assets/js/plugins/nouislider.min.js' %}" type="text/javascript"></script>
+  <script src="{% static 'assets/js/plugins/moment.min.js' %}"></script>
+  <script src="{% static 'assets/js/plugins/datetimepicker.js' %}" type="text/javascript"></script>
+  <script src="{% static 'assets/js/plugins/bootstrap-datepicker.min.js' %}"></script>
+  <!-- Control Center for Argon UI Kit: parallax effects, scripts for the example pages etc -->
+  <!--  Google Maps Plugin    -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+  <script src="{% static 'assets/js/argon-design-system.min.js' %}" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  <script type="text/javascript">
+    
+    function choose(choices) {
+      var index = Math.floor(Math.random() * choices.length);
+      return choices[index];
+    }
+    $(function(){
+      getKeywords();
+      
+      $('#search').keyup(function(){
+        getKeywords();
+      });
+
+      function getKeywords(){
+        var search = $('#search').val();
+        var search_val = "";
+        if(search.length > 0 ){
+            search_val = search;
+        }
+        data = {'csrfmiddlewaretoken':$('input[name=csrfmiddlewaretoken]').val(),
+                  'TextEntered': search_val};
+        $.ajax({
+              type:'POST',
+              url:'http://localhost:8000/get_keywords/',
+              datatype: 'JSON',
+              data: data,
+            success: function(data) {
+              console.log(data); // check out how data is structured
+              var html = "";
+              var wordCloud = "";
+              var arr = ["default", "warning", "success", "primary"]; 
+
+              for (let i = 0; i < data.keywords.length; i++) {
+                var index = Math.floor(Math.random() * arr.length);
+                html += "<a href='/"+data.keywords[i].replace(" ", "_")+"'><span class='badge badge-pill badge-"+arr[index]+" text-uppercase ml-1'>"+data.keywords[i]+"</span></a>";
+                wordCloud += "<li ><a href='/"+data.keywords[i].replace(" ", "_")+"' data-weight='"+Math.floor(Math.random() * 22) + 1+"'>"+data.keywords[i]+"</a></li>";
+              }
+              $('.keywords').html(html);
+              $('.cloud').html(wordCloud);
+            }
+          });
+      }
+    });
+    
+  
+</script>
+  <script>
+    function scrollToDownload() {
+
+      if ($('.section-download').length != 0) {
+        $("html, body").animate({
+          scrollTop: $('.section-download').offset().top
+        }, 1000);
+      }
+    }
+  </script>
+  
+</body>
+
+</html>
